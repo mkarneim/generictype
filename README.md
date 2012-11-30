@@ -8,7 +8,7 @@ Project Homepage: http://github.com/mkarneim/generictype
 About
 -----
 
-GenericType is a utility class considerably eases the resolution of generic type information at runtime.  
+GenericType is a utility class that considerably eases the resolution of generic type information at runtime.  
 
 
 Here is an example of how you could use GenericType from your code.
