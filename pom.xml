@@ -25,6 +25,17 @@
 					<target>1.5</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -41,4 +52,12 @@
 		<url>http://codefabrics.org</url>
 	</organization>
 	<description>Runtime Generic Type Resolution for Java </description>
+	<contributors>
+		<contributor>
+			<name>Michael Karneim</name>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</contributor>
+	</contributors>
 </project>
