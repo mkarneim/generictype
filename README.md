@@ -1,6 +1,8 @@
 GenericType -  Runtime Generic Type Resolution for Java
 ================================================= 
 
+![Logo][logo]
+
 GenericType is a utility class that considerably eases the resolution of generic type information at runtime.  
 
 Author: Michael Karneim
@@ -70,4 +72,4 @@ For some examples please have a look at the [unit tests].
 [Java]: http://www.oracle.com/technetwork/java/
 [unit tests]: http://github.com/mkarneim/generictype/blob/master/src/test/java/org/codefabrics/generictype/GenericTypeTest.java
 [Beanfabrics]: http://beanfabrics.org
-
+[logo]: http://github.com/mkarneim/generictype/blob/master/logo.png "Logo"
