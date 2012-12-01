@@ -97,6 +97,23 @@ public class GenericType {
 	}
 
 	/**
+	 * Returns the class that this type represents.
+	 * 
+	 * @return the class this type represents
+	 * @throws IllegalStateException
+	 *             if this type does not represent a class
+	 */
+	public Class<?> asClass() throws IllegalStateException {
+		if (isClass()) {
+			return (Class<?>) type;
+		}
+		if (isParameterizedType()) {
+			return (Class<?>) ((ParameterizedType) type).getRawType();
+		}
+		throw new IllegalStateException(String.format("Can't cast type %s to Class!", type));
+	}
+
+	/**
 	 * Returns <code>true</code> if this type represents a
 	 * {@link ParameterizedType}.
 	 * 

@@ -36,7 +36,8 @@ public class GenericTypeTest {
 		Class<?> cls = Collection.class;
 		GenericType gt = new GenericType(cls);
 		// When:
-		GenericType typeParam = gt.getTypeParameter(Collection.class.getTypeParameters()[0]);
+		TypeVariable E = Collection.class.getTypeParameters()[0];
+		GenericType typeParam = gt.getTypeParameter(E);
 		// Then:
 		assertTrue("typeParam.isTypeVariable()", typeParam.isTypeVariable());
 	}
