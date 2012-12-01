@@ -39,7 +39,7 @@ Then create an instance of ```GenericType``` with a reference to ```MyCollection
 	
 And now you can access the actual value of the type parameter:
 
-	GenericType typeParam = gt.getTypeParameter(E);
+	GenericType typeParam = classType.getTypeParameter(E);
 	
 	Assert.assertEquals( String.class, typeParam.asClass());
 
