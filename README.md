@@ -1,6 +1,8 @@
 GenericType -  Runtime Generic Type Resolution for Java
 ================================================= 
 
+GenericType is a utility class that considerably eases the resolution of generic type information at runtime.  
+
 Author: Michael Karneim
 
 Project Homepage: http://github.com/mkarneim/generictype
@@ -8,25 +10,38 @@ Project Homepage: http://github.com/mkarneim/generictype
 About
 -----
 
-GenericType is a utility class that considerably eases the resolution of generic type information at runtime.  
+Given you have an interface that extends the generic interface Collection<E>:
 
-
-Here is an example of how you could use GenericType from your code.
-
-Given you have an interface that extends the generic Collection<E> interface:
-
-	public interface StringCollection extends Collection<String> {
+	public interface MyCollection extends Collection<String> {
 	}
-		
-When you create a GenericType object like this:		
 
-	GenericType classType = new GenericType(StringCollection.class);
-		
-Then you can access the actual generic type parameter value like this:
+You can see that the value of the generic type parameter is ```String```.
 
-	GenericType typeParam = classType.getTypeParameter(Collection.class.getTypeParameters()[0]);
-				
-	Assert.assertEquals("typeParam.getType()", String.class, typeParam.getType());
+But do you know how to access this value using reflection?
+Actually it's possible because the value is compiled into the class file of ```MyCollection```.
+
+But if you try to write some code that can resolve it, you'll possibly realize that this not a simple task.
+I stumbled upon this problem during my work on [Beanfabrics]. 
+And it took me quite a while to write some code that can do it.
+ 
+Finally I created this repository with my solution called ```GenericType```.
+
+So how can you use it?
+-----
+
+First choose the type variable you are interested by using standard reflection: 
+	
+	TypeVariable E = Collection.class.getTypeParameters()[0];
+	
+Then create an instance of ```GenericType``` with a reference to ```MyCollection```.
+
+	GenericType classType = new GenericType(MyCollection.class);
+	
+And now you can access the actual value of the type parameter:
+
+	GenericType typeParam = gt.getTypeParameter(E);
+	
+	Assert.assertEquals( String.class, typeParam.asClass());
 
 Download
 --------
@@ -54,4 +69,5 @@ For some examples please have a look at the [unit tests].
 [LGPL]: http://github.com/mkarneim/generictype/blob/master/lgpl.txt
 [Java]: http://www.oracle.com/technetwork/java/
 [unit tests]: http://github.com/mkarneim/generictype/blob/master/src/test/java/org/codefabrics/generictype/GenericTypeTest.java
+[Beanfabrics]: http://beanfabrics.org
 
