@@ -57,6 +57,9 @@ License
 GenericType is open source, and it is distributed under the terms of the [LGPL] license. 
 Please read the [license.txt].
 
+Give me some [feedback] if you can't include a LGPL library into you project.
+I will be happy to add other OS licences if required.
+
 Dependencies
 ------------
 
@@ -70,6 +73,7 @@ For some examples please have a look at the [unit tests].
 [download page]: http://github.com/mkarneim/generictype/archives/master
 [license.txt]: http://github.com/mkarneim/generictype/blob/master/license.txt
 [LGPL]: http://github.com/mkarneim/generictype/blob/master/lgpl.txt
+[feedback]: https://github.com/mkarneim/generictype/issues
 [Java]: http://www.oracle.com/technetwork/java/
 [unit tests]: http://github.com/mkarneim/generictype/blob/master/src/test/java/org/codefabrics/generictype/GenericTypeTest.java
 [Beanfabrics]: http://beanfabrics.org
